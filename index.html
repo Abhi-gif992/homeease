@@ -3,20 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HomeEase - Home Services</title>
-<div class="service-box">
-  <h2>🛠️ More Services</h2>
-  <p>Apni requirement likho</p>
+<title>HomeEase - Fast Home Services</title>
 
-  <input type="text" id="customService" placeholder="Type your service..." 
-  style="padding:10px; width:80%; border-radius:5px; border:1px solid #ccc;">
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+}
 
-  <br><br>
+/* Top Bar */
+.topbar {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
 
-  <button class="btn" onclick="sendToWhatsApp()">
-    Send on WhatsApp
-  </button>
+/* Header */
+header {
+  background: linear-gradient(45deg, #0d6efd, #00c6ff);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 40px;
+  background: white;
+}
+
+.hero h1 {
+  font-size: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+/* Services */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+  gap: 15px;
+}
+
+.service-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Reviews */
+.reviews {
+  background: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Floating Buttons */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: green;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.call {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: blue;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="topbar">
+📞 Call Now: 7528990269 | Fast Service Available 🚀
 </div>
+
+<header>
+HomeEase Services
+</header>
+
+<div class="hero">
+  <h1>Fast Home Services in Your City 🚀</h1>
+  <p>AC Repair | Electrician | Plumber</p>
+
+  <a class="btn" href="tel:7528990269">Call Now</a>
+  <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20service" target="_blank">
+    WhatsApp
+  </a>
+</div>
+
+<div class="services">
+
+  <div class="service-box">
+    <h2>❄️ AC Repair</h2>
+    <p>Quick & affordable AC service</p>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20AC%20repair" target="_blank">Book Now</a>
+  </div>
+
+  <div class="service-box">
+    <h2>⚡ Electrician</h2>
+    <p>Expert electrical solutions</p>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20electrician" target="_blank">Book Now</a>
+  </div>
+
+  <div class="service-box">
+    <h2>🚿 Plumber</h2>
+    <p>Fast plumbing services</p>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20plumber" target="_blank">Book Now</a>
+  </div>
+
+  <!-- More Services -->
+  <div class="service-box">
+    <h2>🛠️ More Services</h2>
+    <p>Select or type your requirement</p>
+
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20Massage%20service" target="_blank">💆 Massage</a>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20Salon%20service" target="_blank">💇 Salon</a>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20Home%20visit%20paid%20service" target="_blank">🏠 Home Visit</a>
+
+    <br><br>
+
+    <input type="text" id="customService" placeholder="Eg: Fridge repair..." 
+    style="padding:10px; width:90%; border-radius:5px; border:1px solid #ccc;">
+
+    <br><br>
+
+    <button class="btn" onclick="sendToWhatsApp()">Send Custom Request</button>
+  </div>
+
+</div>
+
+<div class="reviews">
+  <h2>⭐ Customer Reviews</h2>
+  <p>“Very fast service!” – Rahul</p>
+  <p>“Best electrician!” – Aman</p>
+</div>
+
+<div class="footer">
+© 2026 HomeEase | All Rights Reserved
+</div>
+
+<!-- Floating Buttons -->
+<a class="whatsapp" href="https://wa.me/917528990269?text=Hi%20I%20need%20service" target="_blank">💬</a>
+<a class="call" href="tel:7528990269">📞</a>
 
 <script>
 function sendToWhatsApp() {
@@ -33,127 +204,7 @@ function sendToWhatsApp() {
   window.open(url, "_blank");
 }
 </script>
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #f5f5f5;
-}
-
-header {
-  background: #0d6efd;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 22px;
-}
-
-.hero {
-  padding: 40px;
-  text-align: center;
-  background: white;
-}
-
-.hero h1 {
-  font-size: 28px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background: green;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.services {
-  padding: 20px;
-}
-
-.service-box {
-  background: white;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.reviews {
-  background: #fff;
-  padding: 20px;
-}
-
-.footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-/* Floating WhatsApp Button */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: green;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 20px;
-}
-</style>
-
-</head>
-<body>
-
-<header>
-HomeEase Services
-</header>
-
-<div class="hero">
-  <h1>Fast Home Services at Your Doorstep 🚀</h1>
-  <p>AC Repair | Electrician | Plumber</p>
-  <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20service" target="_blank">
-    Book Now on WhatsApp
-  </a>
-</div>
-
-<div class="services">
-
-  <div class="service-box">
-    <h2>❄️ AC Repair</h2>
-    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20AC%20repair" target="_blank">Book Now</a>
-  </div>
-
-  <div class="service-box">
-    <h2>⚡ Electrician</h2>
-    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20electrician" target="_blank">Book Now</a>
-  </div>
-
-  <div class="service-box">
-    <h2>🚿 Plumber</h2>
-    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20plumber" target="_blank">Book Now</a>
-  </div>
-
-</div>
-
-<div class="reviews">
-  <h2>⭐ Customer Reviews</h2>
-  <p>“Very fast service!” – Rahul</p>
-  <p>“Best electrician in town!” – Aman</p>
-</div>
-
-<div class="footer">
-  © 2026 HomeEase | All Rights Reserved
-</div>
-
-<!-- Floating WhatsApp -->
-<a class="whatsapp" href="https://wa.me/917528990269?text=Hi%20I%20need%20service" target="_blank">
-  💬
-</a>
 
 </body>
+</html>
 </html>

@@ -4,7 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HomeEase - Home Services</title>
+<div class="service-box">
+  <h2>🛠️ More Services</h2>
+  <p>Apni requirement likho</p>
 
+  <input type="text" id="customService" placeholder="Type your service..." 
+  style="padding:10px; width:80%; border-radius:5px; border:1px solid #ccc;">
+
+  <br><br>
+
+  <button class="btn" onclick="sendToWhatsApp()">
+    Send on WhatsApp
+  </button>
+</div>
+
+<script>
+function sendToWhatsApp() {
+  var service = document.getElementById("customService").value;
+
+  if(service === "") {
+    alert("Please enter your service");
+    return;
+  }
+
+  var message = "Hi I need service for: " + service;
+  var url = "https://wa.me/917528990269?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+</script>
 <style>
 body {
   margin: 0;

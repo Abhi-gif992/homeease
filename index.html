@@ -1,119 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>HomeEase - Book Services</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomeEase - Home Services</title>
 
 <style>
-body {font-family: Arial; margin:0; background:#f4f6f9;}
-header {background:#007bff; color:white; padding:15px; text-align:center;}
-.container {padding:20px;}
-.card {background:white; padding:15px; margin:10px 0; border-radius:10px;}
-button {background:#007bff; color:white; border:none; padding:10px; border-radius:5px; cursor:pointer;}
-input, select {width:100%; padding:10px; margin:5px 0;}
-.form-box {background:white; padding:15px; border-radius:10px; margin-top:20px;}
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f5f5;
+}
+
+header {
+  background: #0d6efd;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.hero {
+  padding: 40px;
+  text-align: center;
+  background: white;
+}
+
+.hero h1 {
+  font-size: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.services {
+  padding: 20px;
+}
+
+.service-box {
+  background: white;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.reviews {
+  background: #fff;
+  padding: 20px;
+}
+
+.footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Floating WhatsApp Button */
 .whatsapp {
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-font-size:20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: green;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
-<h1>HomeEase</h1>
-<p>Book Home Services Easily</p>
+HomeEase Services
 </header>
 
-<div class="container">
-
-<h2>Our Services</h2>
-
-<div class="card">
-<h3>Salon at Home</h3>
-<p>Starting ₹499</p>
-<button onclick="selectService('Salon at Home')">Book</button>
+<div class="hero">
+  <h1>Fast Home Services at Your Doorstep 🚀</h1>
+  <p>AC Repair | Electrician | Plumber</p>
+  <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20service" target="_blank">
+    Book Now on WhatsApp
+  </a>
 </div>
 
-<div class="card">
-<h3>Cleaning Service</h3>
-<p>Starting ₹299</p>
-<button onclick="selectService('Cleaning Service')">Book</button>
-</div>
+<div class="services">
 
-<div class="card">
-<h3>Electrician / Plumber</h3>
-<p>Starting ₹199</p>
-<button onclick="selectService('Electrician / Plumber')">Book</button>
-</div>
+  <div class="service-box">
+    <h2>❄️ AC Repair</h2>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20AC%20repair" target="_blank">Book Now</a>
+  </div>
 
-<div class="form-box">
-<h2>Booking Form</h2>
+  <div class="service-box">
+    <h2>⚡ Electrician</h2>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20electrician" target="_blank">Book Now</a>
+  </div>
 
-<input type="text" id="name" placeholder="Your Name">
-<input type="text" id="phone" placeholder="Mobile Number">
-<input type="text" id="address" placeholder="Address">
-
-<select id="service">
-<option>Select Service</option>
-<option>Salon at Home</option>
-<option>Cleaning Service</option>
-<option>Electrician / Plumber</option>
-</select>
-
-<input type="datetime-local" id="date">
-
-<button onclick="submitBooking()">Submit Booking</button>
+  <div class="service-box">
+    <h2>🚿 Plumber</h2>
+    <a class="btn" href="https://wa.me/917528990269?text=Hi%20I%20need%20plumber" target="_blank">Book Now</a>
+  </div>
 
 </div>
 
+<div class="reviews">
+  <h2>⭐ Customer Reviews</h2>
+  <p>“Very fast service!” – Rahul</p>
+  <p>“Best electrician in town!” – Aman</p>
 </div>
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/917528990269?text=Hi%20I%20want%20HomeEase%20service" target="_blank">
-  Chat on WhatsApp
+<div class="footer">
+  © 2026 HomeEase | All Rights Reserved
+</div>
+
+<!-- Floating WhatsApp -->
+<a class="whatsapp" href="https://wa.me/917528990269?text=Hi%20I%20need%20service" target="_blank">
+  💬
 </a>
-</a>
-</a>
-</a>
-
-<script>
-function selectService(service){
-document.getElementById("service").value = service;
-window.scrollTo(0, document.body.scrollHeight);
-}
-
-function submitBooking(){
-let name = document.getElementById("name").value;
-let phone = document.getElementById("phone").value;
-let address = document.getElementById("address").value;
-let service = document.getElementById("service").value;
-let date = document.getElementById("date").value;
-
-if(name=="" || phone=="" || address=="" || service=="Select Service"){
-alert("Please fill all details");
-return;
-}
-
-let msg = `New Booking:
-Name: ${name}
-Phone: ${phone}
-Service: ${service}
-Address: ${address}
-Date: ${date}`;
-
-let url = "https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(msg);
-window.open(url, '_blank');
-}
-</script>
 
 </body>
 </html>
